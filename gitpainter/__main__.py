@@ -1,4 +1,4 @@
-from .automate_git import *
+import scheduler
 
-# if __name__ == '__main__':
-#     project_check()
+if __name__ == '__main__':
+    print('Script is running')

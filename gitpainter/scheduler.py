@@ -2,15 +2,11 @@
 import schedule
 import time
 
-def project_check():
-    print('project check is working')
+def paint_my_git():
+    print('Github profile painter')
 
-def try_scheduler():
-    print('try_scheduler is working')
-
-schedule.every(10).seconds.do(try_scheduler)
+schedule.every(10).seconds.do(paint_my_git)
 
 while True:
     schedule.run_pending()
     time.sleep(5)
-    print('ciao')

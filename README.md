@@ -14,8 +14,7 @@
 ## Usage
 
 ```sh
-# --param optional parameter flag
-python -m gitpainter.paint
+python -m gitpainter
 ```
 
 ## Author
