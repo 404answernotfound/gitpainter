@@ -14,6 +14,8 @@ def color_density(weight):
     for w in range(weight):
         print('Commit {number}'.format(number=w))
         # append new line to logs file
+        with open('logs/painting.txt', 'a') as file:
+            file.write(str(w) + '\n')
         # git add *
         # git commit -m "new commit by pattern"
         # git push
