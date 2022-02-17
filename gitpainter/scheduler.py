@@ -1,6 +1,7 @@
 
 import schedule
 import time
+import os
 
 pattern = [3, 3, 0, 0, 3, 3, 0, 0, 0, 3, 3, 0, 0, 3]
 pattern_counter = 0
@@ -16,9 +17,8 @@ def color_density(weight):
         # append new line to logs file
         with open('logs/painting.txt', 'a') as file:
             file.write(str(w) + '\n')
-        # git add *
-        # git commit -m "new commit by pattern"
-        # git push
+            os.system("git add * && git commit -m \"{}\" && git push -u origin main".format(str(w)))
+            time.sleep(5)
 
 def paint_pattern(shade):
     global pattern
