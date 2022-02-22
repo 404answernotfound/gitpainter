@@ -1,5 +1,5 @@
 
-import schedule
+#import schedule
 import time
 import os
 
@@ -37,9 +37,10 @@ def paint_my_git():
 
 
 # schedule.every().day.at("08:30").do(paint_my_git)
-schedule.every(1).seconds.do(paint_my_git)
+# schedule.every(1).seconds.do(paint_my_git)
 
 
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+# while True:
+#     schedule.run_pending()
+#     time.sleep(1)
+paint_my_git()
