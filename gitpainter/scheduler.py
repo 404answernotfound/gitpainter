@@ -2,6 +2,12 @@
 #import schedule
 import time
 import os
+import schedule
+
+from os import environ as env
+
+from dotenv import load_dotenv
+load_dotenv()
 
 pattern = [3, 3, 0, 0, 3, 3, 0, 0, 0, 3, 3, 0, 0, 3]
 pattern_counter = 0
@@ -36,11 +42,8 @@ def paint_my_git():
         return
 
 
-# schedule.every().day.at("08:30").do(paint_my_git)
-# schedule.every(1).seconds.do(paint_my_git)
+schedule.every().day.at("08:30").do(paint_my_git)
 
-
-# while True:
-#     schedule.run_pending()
-#     time.sleep(1)
-paint_my_git()
+while True:
+    schedule.run_pending()
+    time.sleep(1)
