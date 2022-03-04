@@ -1,4 +1,6 @@
 <h1 align="center">Welcome to Gitpainter 👋</h1>
+
+  <img alt="Gitpainter" src="public/gitpainter.png" />
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://twitter.com/404answnotfound" target="_blank">
