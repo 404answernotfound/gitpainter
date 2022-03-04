@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gitpainter | 404answernotfound</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #333;
+            height: 100%;
+            font-family: 'Fredoka', sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 70%;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 5em;
+            margin: 1.5em 0 .5em;
+        }
+
+        p {
+            color: #aaa;
+            font-size: 1.5em;
+            font-weight: 300;
+            width: 60%;
+            margin-bottom: 3em;
+        }
+
+        .github {
+            border: 2px solid green;
+            border-radius: 10px;
+            padding: 1em;
+            display: grid;
+            grid-template-areas: 
+            ". header"
+            "days github";
+        }
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(52, 15px);
+            grid-template-rows: repeat(7, 15px);
+            grid-auto-flow: column;
+
+            grid-column-gap: 4px;
+            grid-row-gap: 4px;
+            justify-content: start;
+            grid-area: github;
+        }
+
+
+        .months {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            color: #aaa;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin: 0 auto 10px;
+            text-align: center;
+            grid-area: header;
+        }
+
+        .months span{
+            text-align: center;
+        }
+
+        .days {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            color: #aaa;
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+            grid-area: days;
+            font-size: .8em;
+            margin-right: .5em;
+        }
+
+        .item {
+            background-color: #414141;
+            border-radius: 5px;
+            transition: all .5s;
+        }
+
+        .item:hover {
+            background-color: #aaa;
+            cursor: pointer;
+        }
+
+        button.getPattern {
+            display: block;
+            margin-top: 2em;
+            background-color: #fff;
+            color: #333;
+            border-radius: 5px;
+            width: 150px;
+            height: 40px;
+            border: 0;
+            cursor: pointer;
+        }
+
+        button.getPattern:hover {
+            background-color: #f2f2f2;
+        }
+
+        button.getPattern:active {
+            background-color: #ccc;
+        }
+
+        .patternDiv {
+            display: none;
+            font-style: italic;
+            margin-top: 2em;
+            color: #fff;
+            background-color: #414141;
+            padding: 1em 1em;
+            border-radius: 10px;
+            flex-direction: row;
+            justify-content: space-between;
+            max-width: 250px;
+        }
+
+        .patternDiv span:nth-child(1) {
+            display: inline-block;
+            align-items: center;
+            justify-content: center;
+            margin: 0 .5em 0 0;
+            font-size: 1.2em;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            width: 60%;
+            height: 30px;
+            padding: 0 .5em .5em;
+        }
+
+        .patternDiv button {
+            color: #fff;
+            border-radius: 5px;
+            width: 30px;
+            height: 30px;
+            border: 0;
+            cursor: pointer;
+            padding: 5px;
+            transition: all 1s;
+        }
+
+        .patternDiv button:hover {
+            color: #f2f2f2;
+        }
+
+        .patternDiv button:active {
+            color: #ccc;
+        }
+
+        ::-webkit-scrollbar {
+            width: 2px;
+            height: 4px;
+        }
+
+        ::-webkit-scrollbar-button {
+            width: 0px;
+            height: 0px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #e1e1e1;
+            border: 0px none #ffffff;
+            border-radius: 50px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffffff;
+        }
+
+        ::-webkit-scrollbar-thumb:active {
+            background: #000000;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #666666;
+            border: 0px none #ffffff;
+            border-radius: 50px;
+        }
+
+        ::-webkit-scrollbar-track:hover {
+            background: #666666;
+        }
+
+        ::-webkit-scrollbar-track:active {
+            background: #333333;
+        }
+
+        ::-webkit-scrollbar-corner {
+            background: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>
+            Welcome to Gitpainter
+        </h1>
+        <p>
+            Tired of those amazing software engineers and hackers that everyday, at every hour, commit new code to their
+            Github profiles?
+            Worry no more, because now, you can automate your commits and also design a pattern out of them!
+        </p>
+        <div class="github">
+            <div class="months">
+                <span>Jan</span>
+                <span>Feb</span>
+                <span>Mar</span>
+                <span>Apr</span>
+                <span>May</span>
+                <span>Jun</span>
+                <span>Jul</span>
+                <span>Aug</span>
+                <span>Sep</span>
+                <span>Oct</span>
+                <span>Nov</span>
+                <span>Dec</span>
+            </div>
+            <div class="days">
+                <span>Mon</span>
+                <span>Wed</span>
+                <span>Fri</span>
+            </div>
+            <div class="parent">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        </div>
+        <button class="getPattern">Get your pattern!</button>
+        <div class="patternDiv">
+            <span></span>
+            <button><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 460 460"
+                    style="enable-background:new 0 0 460 460; width: 20px; height: 20px;" xml:space="preserve">
+                    <g>
+                        <g>
+                            <g>
+                                <path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+                           c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+                           c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z" />
+                                <path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+                           c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+                           c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+                           C291.206,428.715,289.92,430,288.341,430z" />
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </main>
+    <script>
+        const items = document.querySelectorAll('div.item')
+        const btn = document.querySelector('button')
+        const patternDiv = document.querySelector('.patternDiv')
+        const patternDivSpan = document.querySelector('.patternDiv span')
+        const patternDivBtn = document.querySelector('.patternDiv button')
+
+        function addToPattern(e) {
+            console.log(e.target)
+            if (!e.target.getAttribute('clicked')) {
+                e.target.setAttribute('clicked', true)
+                e.target.style.backgroundColor = '#31A641'
+                return
+            }
+            e.target.setAttribute('clicked', false)
+            e.target.style.backgroundColor = '#414141'
+        }
+
+        function createPattern(pattern) {
+            items.forEach(item => {
+                if (item.getAttribute('clicked')) {
+                    pattern.push(3)
+                    return
+                }
+                pattern.push(0)
+            })
+            return pattern
+        }
+
+        function trimPattern(pattern) {
+            let lastPosition = null
+            for (let i = 0; i < pattern.length; i++) {
+                if (pattern[i] != 0) {
+                    lastPosition = i
+                }
+            }
+            lastPosition += 1
+            pattern = pattern.slice(0, lastPosition)
+            if (pattern.length == 1) {
+                patternDivSpan.textContent = 'No pattern selected!'
+                patternDiv.style.display = 'flex'
+                patternDivBtn.disabled = true
+                setTimeout(() => {
+                    patternDiv.style.display = 'none'
+                }, 800)
+                return
+            }
+            patternDivBtn.disabled ? patternDivBtn.disabled = false : null
+            patternDiv.style.display = 'flex';
+            patternDivSpan.textContent = pattern.toString()
+            return pattern
+        }
+
+        btn.addEventListener('click', (e) => {
+            let pattern = []
+            let filledPattern = createPattern(pattern)
+            let trimmedPattern = trimPattern(filledPattern)
+
+
+            patternDivBtn.addEventListener('click', () => {
+                patternDivBtn.style.backgroundColor = '#31A641'
+                patternDivBtn.style.fill = '#fff'
+                navigator.clipboard.writeText(trimmedPattern);
+                setTimeout(() => {
+                    patternDivBtn.style.backgroundColor = '#fff'
+                    patternDivBtn.style.fill = '#414141'
+                    patternDiv.style.display = 'none'
+                }, 800)
+            })
+
+            return trimmedPattern
+        })
+
+        items.forEach(item => item.addEventListener('click', (e) => {
+            addToPattern(e)
+        }))
+    </script>
+</body>
+
+</html>
