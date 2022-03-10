@@ -9,7 +9,7 @@ from os import environ as env
 from dotenv import load_dotenv
 load_dotenv()
 
-pattern = [3, 3, 0, 0, 3, 3, 0, 0, 0, 3, 3, 0, 0, 3]
+pattern = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,0,0,0,3,0,0,0,3,0,0,3,0,0,0,0,3,0,0,3,0,0,0,3,0,3,0,0,0,0,3,0,3,0,0,0,3,0,0,0,3,3,3]
 pattern_counter = 0
 pattern_length = len(pattern)
 general_counter = 0
